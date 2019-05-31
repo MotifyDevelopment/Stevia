@@ -9,18 +9,17 @@
 import UIKit
 
 public extension UIView {
-    
     /**
      Adds the constraints needed for the view to fill its `superview`.
      A padding can be used to apply equal spaces between the view and its superview
-    */
+     */
     @discardableResult
     func fillContainer(_ padding: CGFloat = 0) -> UIView {
         fillHorizontally(m: padding)
         fillVertically(m: padding)
         return self
     }
-    
+
     @available(*, deprecated, message: "Use 'fillVertically' instead")
     /**
      Adds the constraints needed for the view to fill its `superview` Vertically.
@@ -29,7 +28,7 @@ public extension UIView {
     func fillV(m points: CGFloat = 0) -> UIView {
         return fill(.vertical, points: points)
     }
-    
+
     /**
      Adds the constraints needed for the view to fill its `superview` Vertically.
      A padding can be used to apply equal spaces between the view and its superview
@@ -38,7 +37,7 @@ public extension UIView {
     func fillVertically(m points: CGFloat = 0) -> UIView {
         return fill(.vertical, points: points)
     }
-    
+
     @available(*, deprecated, message: "Use 'fillHorizontally' instead")
     /**
      Adds the constraints needed for the view to fill its `superview` Horizontally.
@@ -47,7 +46,7 @@ public extension UIView {
     func fillH(m points: CGFloat = 0) -> UIView {
         return fill(.horizontal, points: points)
     }
-    
+
     /**
      Adds the constraints needed for the view to fill its `superview` Horizontally.
      A padding can be used to apply equal spaces between the view and its superview
@@ -56,7 +55,7 @@ public extension UIView {
     func fillHorizontally(m points: CGFloat = 0) -> UIView {
         return fill(.horizontal, points: points)
     }
-    
+
     fileprivate func fill(_ axis: NSLayoutConstraint.Axis, points: CGFloat = 0) -> UIView {
         let a: NSLayoutConstraint.Attribute = axis == .vertical ? .top : .left
         let b: NSLayoutConstraint.Attribute = axis == .vertical ? .bottom : .right

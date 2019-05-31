@@ -9,16 +9,15 @@
 import UIKit
 
 public extension UIView {
-    
     /**
      Centers the view in its container.
-     
+
      ```
      button.centerInContainer()
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
     func centerInContainer() -> UIView {
@@ -27,16 +26,16 @@ public extension UIView {
         }
         return self
     }
-    
+
     /**
      Centers the view horizontally (X axis) in its container.
-     
+
      ```
      button.centerHorizontally()
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
     func centerHorizontally() -> UIView {
@@ -45,16 +44,16 @@ public extension UIView {
         }
         return self
     }
-    
+
     /**
      Centers the view vertically (Y axis) in its container.
-     
+
      ```
      button.centerVertically()
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
     func centerVertically() -> UIView {
@@ -63,16 +62,16 @@ public extension UIView {
         }
         return self
     }
-    
+
     /**
      Centers the view horizontally (X axis) in its container, with an offset
-     
+
      ```
      button.centerHorizontally(40)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
     func centerHorizontally(_ offset: CGFloat) -> UIView {
@@ -81,16 +80,16 @@ public extension UIView {
         }
         return self
     }
-    
+
     /**
      Centers the view vertically (Y axis) in its container, with an offset
-     
+
      ```
      button.centerVertically(40)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
     func centerVertically(_ offset: CGFloat) -> UIView {

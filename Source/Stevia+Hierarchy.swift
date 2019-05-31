@@ -9,37 +9,34 @@
 import UIKit
 
 public extension UIView {
-    
     /**
      Defines the view hierachy for the view.
-     
+
      Esentially, this is just a shortcut to `addSubview`
      and 'translatesAutoresizingMaskIntoConstraints = false'
-     
-     
-     
+
      ```
      class MyView: UIView {
-     
+
      let email = UITextField()
      let password = UITextField()
      let login = UIButton()
-     
-        convenience init() {
-        self.init(frame: CGRect.zero)
-     
-         sv(
-            email,
-            password,
-            login
-         )
-        ...
-     
-        }
+
+     convenience init() {
+     self.init(frame: CGRect.zero)
+
+     sv(
+     email,
+     password,
+     login
+     )
+     ...
+
      }
-     
+     }
+
      ```
-     
+
      - Returns: Itself to enable nested layouts.
      */
     @discardableResult
@@ -49,33 +46,32 @@ public extension UIView {
 
     /**
      Defines the view hierachy for the view.
-     
+
      Esentially, this is just a shortcut to `addSubview`
      and 'translatesAutoresizingMaskIntoConstraints = false'
-     
-     
+
      ```
      class MyView: UIView {
-     
+
      let email = UITextField()
      let password = UITextField()
      let login = UIButton()
-     
-         convenience init() {
-         self.init(frame: CGRect.zero)
-         
-         sv(
-            email,
-            password,
-            login
-         )
+
+     convenience init() {
+     self.init(frame: CGRect.zero)
+
+     sv(
+     email,
+     password,
+     login
+     )
      ...
-     
+
      }
      }
-     
+
      ```
-     
+
      - Returns: Itself to enable nested layouts.
      */
     @objc @discardableResult
@@ -89,35 +85,34 @@ public extension UIView {
 }
 
 public extension UITableViewCell {
-    
     /**
      Defines the view hierachy for the view.
-     
+
      Esentially, this is just a shortcut to `contentView.addSubview`
      and 'translatesAutoresizingMaskIntoConstraints = false'
-     
+
      ```
      class NotificationCell: UITableViewCell {
-    
-        var avatar = UIImageView()
-        var name = UILabel()
-        var followButton = UIButton()
-     
-         required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
-         override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-         super.init(style: style, reuseIdentifier: reuseIdentifier) {
-     
-             sv(
-                avatar,
-                name,
-                followButton
-            )
-        ...
-     
-        }
+
+     var avatar = UIImageView()
+     var name = UILabel()
+     var followButton = UIButton()
+
+     required init?(coder aDecoder: NSCoder) { super.init(coder: aDecoder) }
+     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+     super.init(style: style, reuseIdentifier: reuseIdentifier) {
+
+     sv(
+     avatar,
+     name,
+     followButton
+     )
+     ...
+
+     }
      }
      ```
-     
+
      - Returns: Itself to enable nested layouts.
      */
     @discardableResult
@@ -129,33 +124,32 @@ public extension UITableViewCell {
 public extension UICollectionViewCell {
     /**
      Defines the view hierachy for the view.
-     
+
      Esentially, this is just a shortcut to `contentView.addSubview`
      and 'translatesAutoresizingMaskIntoConstraints = false'
-     
+
      ```
      class PhotoCollectionViewCell: UICollectionViewCell {
-     
+
      var avatar = UIImageView()
      var name = UILabel()
      var followButton = UIButton()
-     
-     
+
      required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
      override init(frame: CGRect) {
      super.init(frame: frame)
-     
-         sv(
-            avatar,
-            name,
-            followButton
-         )
+
+     sv(
+     avatar,
+     name,
+     followButton
+     )
      ...
-     
+
      }
      }
      ```
-     
+
      - Returns: Itself to enable nested layouts.
      */
     @discardableResult

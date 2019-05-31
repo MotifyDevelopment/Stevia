@@ -9,169 +9,167 @@
 import UIKit
 
 public extension UIView {
-    
     /** Gets the left constraint if found.
-    
-    Example Usage for changing left margin of a label :
-    ```
-    label.leftConstraint?.constant = 10
-     
-    // Animate if needed
-    UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
-    ```
-    - Returns: The left NSLayoutConstraint if found.
+
+     Example Usage for changing left margin of a label :
+     ```
+     label.steviaLeftConstraint?.constant = 10
+
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The left NSLayoutConstraint if found.
      */
-    var leftConstraint: NSLayoutConstraint? {
+    var steviaLeftConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .left)
     }
 
     /** Gets the right constraint if found.
-     
-    Example Usage for changing right margin of a label :
-     
-    ```
-    label.rightConstraint?.constant = 10
-     
-    // Animate if needed
-    UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
-    ```
-    - Returns: The right NSLayoutConstraint if found.
+
+     Example Usage for changing right margin of a label :
+
+     ```
+     label.steviaRightConstraint?.constant = 10
+
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The right NSLayoutConstraint if found.
      */
-    var rightConstraint: NSLayoutConstraint? {
+    var steviaRightConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .right)
     }
-        
+
     /** Gets the top constraint if found.
-     
-    Example Usage for changing top margin of a label :
-     
-    ```
-    label.topConstraint?.constant = 10
-     
-    // Animate if needed
-    UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
-    ```
-    - Returns: The top NSLayoutConstraint if found.
+
+     Example Usage for changing top margin of a label :
+
+     ```
+     label.steviaTopConstraint?.constant = 10
+
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The top NSLayoutConstraint if found.
      */
-    var topConstraint: NSLayoutConstraint? {
+    var steviaTopConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .top)
     }
-    
+
     /** Gets the bottom constraint if found.
-    
-    Example Usage for changing bottom margin of a label :
-     
-    ```
-    label.bottomConstraint?.constant = 10
-    
-    // Animate if needed
-    UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
-    ```
+
+     Example Usage for changing bottom margin of a label :
+
+     ```
+     label.steviaBottomConstraint?.constant = 10
+
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
      - Returns: The bottom NSLayoutConstraint if found.
      */
-    var bottomConstraint: NSLayoutConstraint? {
+    var steviaBottomConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .bottom)
     }
-    
+
     /** Gets the height constraint if found.
-     
-    Example Usage for changing height property of a label :
-     
-    ```
-    label.heightConstraint?.constant = 10
-     
-    // Animate if needed
-    UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
-    ```
-    - Returns: The height NSLayoutConstraint if found.
-    */
-    var heightConstraint: NSLayoutConstraint? {
+
+     Example Usage for changing height property of a label :
+
+     ```
+     label.steviaHeightConstraint?.constant = 10
+
+     // Animate if needed
+     UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
+     ```
+     - Returns: The height NSLayoutConstraint if found.
+     */
+    var steviaHeightConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .height)
     }
-    
+
     /** Gets the width constraint if found.
-     
+
      Example Usage for changing width property of a label :
-     
+
      ```
-     label.widthConstraint?.constant = 10
-     
+     label.steviaWidthConstraint?.constant = 10
+
      // Animate if needed
      UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
      ```
      - Returns: The width NSLayoutConstraint if found.
      */
-    var widthConstraint: NSLayoutConstraint? {
+    var steviaWidthConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .width)
     }
-    
+
     /** Gets the trailing constraint if found.
-     
+
      Example Usage for changing width property of a label :
-     
+
      ```
-     label.trailingConstraint?.constant = 10
-     
+     label.steviaTrailingConstraint?.constant = 10
+
      // Animate if needed
      UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
      ```
      - Returns: The trailing NSLayoutConstraint if found.
      */
-    var trailingConstraint: NSLayoutConstraint? {
+    var steviaTrailingConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .trailing)
     }
-    
+
     /** Gets the leading constraint if found.
-     
+
      Example Usage for changing width property of a label :
-     
+
      ```
-     label.leadingConstraint?.constant = 10
-     
+     label.steviaLeadingConstraint?.constant = 10
+
      // Animate if needed
      UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
      ```
      - Returns: The leading NSLayoutConstraint if found.
      */
-    var leadingConstraint: NSLayoutConstraint? {
+    var steviaLeadingConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .leading)
     }
-    
+
     /** Gets the centerX constraint if found.
-     
+
      Example Usage for changing width property of a label :
-     
+
      ```
-     label.centerXConstraint?.constant = 10
-     
+     label.steviaCenterXConstraint?.constant = 10
+
      // Animate if needed
      UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
      ```
      - Returns: The width NSLayoutConstraint if found.
      */
-    var centerXConstraint: NSLayoutConstraint? {
+    var steviaCenterXConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .centerX)
     }
-    
+
     /** Gets the centerY constraint if found.
-     
+
      Example Usage for changing width property of a label :
-     
+
      ```
-     label.centerYConstraint?.constant = 10
-     
+     label.steviaCenterYConstraint?.constant = 10
+
      // Animate if needed
      UIView.animateWithDuration(0.3, animations:layoutIfNeeded)
      ```
      - Returns: The width NSLayoutConstraint if found.
      */
-    var centerYConstraint: NSLayoutConstraint? {
+    var steviaCenterYConstraint: NSLayoutConstraint? {
         return constraintForView(self, attribute: .centerY)
     }
 }
 
 func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
-    
     func lookForConstraint(in view: UIView?) -> NSLayoutConstraint? {
         guard let constraints = view?.constraints else {
             return nil
@@ -185,13 +183,13 @@ func constraintForView(_ v: UIView, attribute: NSLayoutConstraint.Attribute) -> 
         }
         return nil
     }
-    
+
     // Width and height constraints added via widthAnchor/heightAnchors are
     // added on the view itself.
-    if (attribute == .width || attribute == .height) {
+    if attribute == .width || attribute == .height {
         return lookForConstraint(in: v.superview) ?? lookForConstraint(in: v)
     }
-    
+
     // Look for constraint on superview.
     return lookForConstraint(in: v.superview)
 }

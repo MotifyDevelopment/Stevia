@@ -9,113 +9,112 @@
 import UIKit
 
 public extension UIView {
-    
     /**
      Adds an Autolayout constraint for sizing the view.
-     
+
      ```
      image.size(100)
      image.size(100%)
-     
+
      // is equivalent to
-     
-     image.width(100).height(100)
+
+     image.steviaWidth(100).steviaHeight(100)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
     func size(_ points: CGFloat) -> UIView {
-        width(points)
-        height(points)
+        steviaWidth(points)
+        steviaHeight(points)
         return self
     }
-    
+
     /**
      Adds an Autolayout constraint for setting the view's height.
-     
+
      ```
-     image.height(100)
-     
+     image.steviaHeight(100)
+
      // is equivalent to
-     
-     image ~ 100
-     
+
+     image ~~ 100
+
      // Flexible margins
-     image.height(<=100)
-     image.height(>=100)
-     image.height(100%)
+     image.steviaHeight(<=100)
+     image.steviaHeight(>=100)
+     image.steviaHeight(100%)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
-    func height(_ points: CGFloat) -> UIView {
+    func steviaHeight(_ points: CGFloat) -> UIView {
         return size(.height, points: points)
     }
-    
+
     /**
      Adds an Autolayout constraint for setting the view's width.
-     
+
      ```
-     image.width(100)
-     image.width(<=100)
-     image.width(>=100)
-     image.width(100%)
+     image.steviaWidth(100)
+     image.steviaWidth(<=100)
+     image.steviaWidth(>=100)
+     image.steviaWidth(100%)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
-    func width(_ points: CGFloat) -> UIView {
+    func steviaWidth(_ points: CGFloat) -> UIView {
         return size(.width, points: points)
     }
-    
+
     /**
      Adds an Autolayout constraint for setting the view's height.
-     
+
      ```
-     image.height(100)
-     
+     image.steviaHeight(100)
+
      // is equivalent to
-     
-     image ~ 100
-     
+
+     image ~~ 100
+
      // Flexible margins
-     image.height(<=100)
-     image.height(>=100)
-     image.height(100%)
+     image.steviaHeight(<=100)
+     image.steviaHeight(>=100)
+     image.steviaHeight(100%)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
-    func height(_ fm: SteviaFlexibleMargin) -> UIView {
+    func steviaHeight(_ fm: SteviaFlexibleMargin) -> UIView {
         return size(.height, relatedBy: fm.relation, points: fm.points)
     }
-    
+
     /**
      Adds an Autolayout constraint for setting the view's width.
-     
+
      ```
-     image.width(100)
-     image.width(<=100)
-     image.width(>=100)
-     image.width(100%)
+     image.steviaWidth(100)
+     image.steviaWidth(<=100)
+     image.steviaWidth(>=100)
+     image.steviaWidth(100%)
      ```
-     
+
      - Returns: Itself, enabling chaining,
-     
+
      */
     @discardableResult
-    func width(_ fm: SteviaFlexibleMargin) -> UIView {
+    func steviaWidth(_ fm: SteviaFlexibleMargin) -> UIView {
         return size(.width, relatedBy: fm.relation, points: fm.points)
     }
-    
+
     fileprivate func size(_ attribute: NSLayoutConstraint.Attribute,
                           relatedBy: NSLayoutConstraint.Relation = .equal,
                           points: CGFloat) -> UIView {
@@ -134,20 +133,20 @@ public extension UIView {
 
 /**
  Enforces an array of views to keep the same size.
- 
+
  ```
  equal(sizes: image1, image2, image3)
  ```
- 
+
  - Returns: The views enabling chaining.
- 
+
  */
 @discardableResult
 public func equal(sizes views: UIView...) -> [UIView] {
     return equal(sizes: views)
 }
 
-@available(*, deprecated, renamed:"equal(sizes:)")
+@available(*, deprecated, renamed: "equal(sizes:)")
 @discardableResult
 public func equalSizes(_ views: UIView...) -> [UIView] {
     return equal(sizes: views)
@@ -155,13 +154,13 @@ public func equalSizes(_ views: UIView...) -> [UIView] {
 
 /**
  Enforces an array of views to keep the same size.
- 
+
  ```
  equal(sizes: image1, image2, image3)
  ```
- 
+
  - Returns: The views enabling chaining.
- 
+
  */
 @discardableResult
 public func equal(sizes views: [UIView]) -> [UIView] {
@@ -170,7 +169,7 @@ public func equal(sizes views: [UIView]) -> [UIView] {
     return views
 }
 
-@available(*, deprecated, renamed:"equal(sizes:)")
+@available(*, deprecated, renamed: "equal(sizes:)")
 @discardableResult
 public func equalSizes(_ views: [UIView]) -> [UIView] {
     equal(heights: views)
@@ -180,20 +179,20 @@ public func equalSizes(_ views: [UIView]) -> [UIView] {
 
 /**
  Enforces an array of views to keep the same widths.
- 
+
  ```
  equal(widths: image1, image2, image3)
  ```
- 
+
  - Returns: The views enabling chaining.
- 
+
  */
 @discardableResult
 public func equal(widths views: UIView...) -> [UIView] {
     return equal(widths: views)
 }
 
-@available(*, deprecated, renamed:"equal(widths:)")
+@available(*, deprecated, renamed: "equal(widths:)")
 @discardableResult
 public func equalWidths(_ views: UIView...) -> [UIView] {
     return equal(widths: views)
@@ -201,13 +200,13 @@ public func equalWidths(_ views: UIView...) -> [UIView] {
 
 /**
  Enforces an array of views to keep the same widths.
- 
+
  ```
  equal(widths: image1, image2, image3)
  ```
- 
+
  - Returns: The views enabling chaining.
- 
+
  */
 @discardableResult
 public func equal(widths views: [UIView]) -> [UIView] {
@@ -215,7 +214,7 @@ public func equal(widths views: [UIView]) -> [UIView] {
     return views
 }
 
-@available(*, deprecated, renamed:"equal(widths:)")
+@available(*, deprecated, renamed: "equal(widths:)")
 @discardableResult
 public func equalWidths(_ views: [UIView]) -> [UIView] {
     equal(.width, views: views)
@@ -224,20 +223,20 @@ public func equalWidths(_ views: [UIView]) -> [UIView] {
 
 /**
  Enforces an array of views to keep the same heights.
- 
+
  ```
  equal(heights: image1, image2, image3)
  ```
- 
+
  - Returns: The views enabling chaining.
- 
+
  */
 @discardableResult
 public func equal(heights views: UIView...) -> [UIView] {
     return equal(heights: views)
 }
 
-@available(*, deprecated, renamed:"equal(heights:)")
+@available(*, deprecated, renamed: "equal(heights:)")
 @discardableResult
 public func equalHeights(_ views: UIView...) -> [UIView] {
     return equal(heights: views)
@@ -245,13 +244,13 @@ public func equalHeights(_ views: UIView...) -> [UIView] {
 
 /**
  Enforces an array of views to keep the same heights.
- 
+
  ```
  equal(heights: image1, image2, image3)
  ```
- 
+
  - Returns: The views enabling chaining.
- 
+
  */
 @discardableResult
 public func equal(heights views: [UIView]) -> [UIView] {
@@ -259,7 +258,7 @@ public func equal(heights views: [UIView]) -> [UIView] {
     return views
 }
 
-@available(*, deprecated, renamed:"equal(heights:)")
+@available(*, deprecated, renamed: "equal(heights:)")
 @discardableResult
 public func equalHeights(_ views: [UIView]) -> [UIView] {
     equal(.height, views: views)

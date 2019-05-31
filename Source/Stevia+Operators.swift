@@ -11,40 +11,40 @@ import UIKit
 prefix operator |
 @discardableResult
 public prefix func | (p: UIView) -> UIView {
-    return p.left(0)
+    return p.steviaLeft(0)
 }
 
 postfix operator |
 @discardableResult
 public postfix func | (p: UIView) -> UIView {
-    return p.right(0)
+    return p.steviaRight(0)
 }
 
-infix operator ~ : HeightPrecedence
+infix operator ~~: HeightPrecedence
 
 precedencegroup HeightPrecedence {
     lowerThan: AdditionPrecedence
 }
 
 @discardableResult
-public func ~ (left: UIView, right: CGFloat) -> UIView {
-    return left.height(right)
+public func ~~ (left: UIView, right: CGFloat) -> UIView {
+    return left.steviaHeight(right)
 }
 
 @discardableResult
-public func ~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
-    return left.height(right)
+public func ~~ (left: UIView, right: SteviaFlexibleMargin) -> UIView {
+    return left.steviaHeight(right)
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: CGFloat) -> [UIView] {
-    for l in left { l.height(right) }
+public func ~~ (left: [UIView], right: CGFloat) -> [UIView] {
+    for l in left { l.steviaHeight(right) }
     return left
 }
 
 @discardableResult
-public func ~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
-    for l in left { l.height(right) }
+public func ~~ (left: [UIView], right: SteviaFlexibleMargin) -> [UIView] {
+    for l in left { l.steviaHeight(right) }
     return left
 }
 
@@ -58,7 +58,7 @@ public prefix func |- (p: CGFloat) -> SideConstraint {
 
 @discardableResult
 public prefix func |- (v: UIView) -> UIView {
-    v.left(8)
+    v.steviaLeft(8)
     return v
 }
 
@@ -72,7 +72,7 @@ public postfix func -| (p: CGFloat) -> SideConstraint {
 
 @discardableResult
 public postfix func -| (v: UIView) -> UIView {
-    v.right(8)
+    v.steviaRight(8)
     return v
 }
 
@@ -109,7 +109,7 @@ public func - (left: SideConstraint, right: UIView) -> UIView {
 
 @discardableResult
 public func - (left: [UIView], right: SideConstraint) -> [UIView] {
-    let lastView = left[left.count-1]
+    let lastView = left[left.count - 1]
     if let spv = lastView.superview {
         let c = constraint(item: lastView, attribute: .right,
                            toItem: spv, attribute: .right,
@@ -134,14 +134,14 @@ public func - (left: UIView, right: SideConstraint) -> UIView {
 public func - (left: PartialConstraint, right: UIView) -> [UIView] {
     if let views = left.views {
         if let spv = right.superview {
-            let lastView = views[views.count-1]
+            let lastView = views[views.count - 1]
             let c = constraint(item: lastView, attribute: .right,
                                toItem: right, attribute: .left,
                                constant: -left.constant)
             spv.addConstraint(c)
         }
-        
-        return  views + [right]
+
+        return views + [right]
     } else {
         // were at the end?? nooope?/?
         if let spv = right.superview {
@@ -150,7 +150,7 @@ public func - (left: PartialConstraint, right: UIView) -> [UIView] {
                                constant: -left.constant)
             spv.addConstraint(c)
         }
-        return  [left.view1, right]
+        return [left.view1, right]
     }
 }
 
@@ -175,7 +175,7 @@ public func - (left: [UIView], right: CGFloat) -> PartialConstraint {
 
 @discardableResult
 public func - (left: [UIView], right: UIView) -> [UIView] {
-    let lastView = left[left.count-1]
+    let lastView = left[left.count - 1]
     if let spv = lastView.superview {
         let c = constraint(item: lastView, attribute: .right,
                            toItem: right, attribute: .left,
@@ -191,12 +191,12 @@ public struct Space {
 }
 
 @discardableResult
-public func - (left: UIView, right: String) -> Space {
+public func - (left: UIView, _: String) -> Space {
     return Space(previousViews: [left])
 }
 
 @discardableResult
-public func - (left: [UIView], right: String) -> Space {
+public func - (left: [UIView], _: String) -> Space {
     return Space(previousViews: left)
 }
 

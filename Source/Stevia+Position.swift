@@ -9,100 +9,99 @@
 import UIKit
 
 public extension UIView {
-    
     /** Sets the left margin for a view.
-     
-    Example Usage :
-     
-     label.left(20)
-     label.left(<=20)
-     label.left(>=20)
-     label.left(20%)
-     
+
+     Example Usage :
+
+     label.steviaLeft(20)
+     label.steviaLeft(<=20)
+     label.steviaLeft(>=20)
+     label.steviaLeft(20%)
+
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func left(_ points: CGFloat) -> UIView {
+    func steviaLeft(_ points: CGFloat) -> UIView {
         return position(.left, points: points)
     }
-    
+
     /** Sets the right margin for a view.
-     
-    Example Usage :
-     
-     label.right(20)
-     label.right(<=20)
-     label.right(>=20)
-     label.right(20%)
-     
+
+     Example Usage :
+
+     label.steviaRight(20)
+     label.steviaRight(<=20)
+     label.steviaRight(>=20)
+     label.steviaRight(20%)
+
      - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func right(_ points: CGFloat) -> UIView {
+    func steviaRight(_ points: CGFloat) -> UIView {
         return position(.right, points: -points)
     }
-    
+
     /** Sets the top margin for a view.
-     
-    Example Usage :
-     
-     label.top(20)
-     label.top(<=20)
-     label.top(>=20)
-     label.top(20%)
-     
-    - Returns: Itself for chaining purposes
-    */
+
+     Example Usage :
+
+     label.steviaTop(20)
+     label.steviaTop(<=20)
+     label.steviaTop(>=20)
+     label.steviaTop(20%)
+
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func top(_ points: CGFloat) -> UIView {
+    func steviaTop(_ points: CGFloat) -> UIView {
         return position(.top, points: points)
     }
-    
+
     /** Sets the bottom margin for a view.
-     
-    Example Usage :
-     
-     label.bottom(20)
-     label.bottom(<=20)
-     label.bottom(>=20)
-     label.bottom(20%)
-     
-    - Returns: Itself for chaining purposes
-    */
+
+     Example Usage :
+
+     label.steviaBottom(20)
+     label.steviaBottom(<=20)
+     label.steviaBottom(>=20)
+     label.steviaBottom(20%)
+
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func bottom(_ points: CGFloat) -> UIView {
+    func steviaBottom(_ points: CGFloat) -> UIView {
         return position(.bottom, points: -points)
     }
 
     /** Sets the left margin for a view.
-     
-    Example Usage :
-     
-     label.left(20)
-     label.left(<=20)
-     label.left(>=20)
-     label.left(20%)
-     
-    - Returns: Itself for chaining purposes
-    */
+
+     Example Usage :
+
+     label.steviaLeft(20)
+     label.steviaLeft(<=20)
+     label.steviaLeft(>=20)
+     label.steviaLeft(20%)
+
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func left(_ fm: SteviaFlexibleMargin) -> UIView {
+    func steviaLeft(_ fm: SteviaFlexibleMargin) -> UIView {
         return position(.left, relatedBy: fm.relation, points: fm.points)
     }
-    
+
     /** Sets the right margin for a view.
-     
-    Example Usage :
-     
-     label.right(20)
-     label.right(<=20)
-     label.right(>=20)
-     label.right(20%)
-     
-    - Returns: Itself for chaining purposes
-    */
+
+     Example Usage :
+
+     label.steviaRight(20)
+     label.steviaRight(<=20)
+     label.steviaRight(>=20)
+     label.steviaRight(20%)
+
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func right(_ fm: SteviaFlexibleMargin) -> UIView {
+    func steviaRight(_ fm: SteviaFlexibleMargin) -> UIView {
         // For right this should be inverted.
         var n = SteviaFlexibleMargin()
         n.points = -fm.points
@@ -114,36 +113,36 @@ public extension UIView {
         }
         return position(.right, relatedBy: n.relation, points: n.points)
     }
-    
+
     /** Sets the top margin for a view.
-     
-    Example Usage :
-     
-     label.top(20)
-     label.top(<=20)
-     label.top(>=20)
-     label.top(20%)
-     
-    - Returns: Itself for chaining purposes
+
+     Example Usage :
+
+     label.steviaTop(20)
+     label.steviaTop(<=20)
+     label.steviaTop(>=20)
+     label.steviaTop(20%)
+
+     - Returns: Itself for chaining purposes
      */
     @discardableResult
-    func top(_ fm: SteviaFlexibleMargin) -> UIView {
+    func steviaTop(_ fm: SteviaFlexibleMargin) -> UIView {
         return position(.top, relatedBy: fm.relation, points: fm.points)
     }
-    
+
     /** Sets the bottom margin for a view.
-     
-    Example Usage :
-     
-     label.bottom(20)
-     label.bottom(<=20)
-     label.bottom(>=20)
-     label.bottom(20%)
-     
-    - Returns: Itself for chaining purposes
-    */
+
+     Example Usage :
+
+     label.steviaBottom(20)
+     label.steviaBottom(<=20)
+     label.steviaBottom(>=20)
+     label.steviaBottom(20%)
+
+     - Returns: Itself for chaining purposes
+     */
     @discardableResult
-    func bottom(_ fm: SteviaFlexibleMargin) -> UIView {
+    func steviaBottom(_ fm: SteviaFlexibleMargin) -> UIView {
         // For bottom this should be inverted.
         var n = SteviaFlexibleMargin()
         n.points = -fm.points
@@ -155,7 +154,7 @@ public extension UIView {
         }
         return position(.bottom, relatedBy: n.relation, points: n.points)
     }
-    
+
     fileprivate func position(_ position: NSLayoutConstraint.Attribute,
                               relatedBy: NSLayoutConstraint.Relation = .equal,
                               points: CGFloat) -> UIView {

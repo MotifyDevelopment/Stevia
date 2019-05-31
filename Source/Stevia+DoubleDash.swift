@@ -8,91 +8,91 @@
 
 import UIKit
 
-infix operator -- :AdditionPrecedence
+infix operator --: AdditionPrecedence
 
 @discardableResult
 public func -- (left: UIView, right: CGFloat) -> PartialConstraint {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: SideConstraint, right: UIView) -> UIView {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: [UIView], right: SideConstraint) -> [UIView] {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: UIView, right: SideConstraint) -> UIView {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: PartialConstraint, right: UIView) -> [UIView] {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: UIView, right: UIView) -> [UIView] {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: [UIView], right: CGFloat) -> PartialConstraint {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: [UIView], right: UIView) -> [UIView] {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: UIView, right: String) -> Space {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: [UIView], right: String) -> Space {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: Space, right: UIView) -> [UIView] {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: UIView,
                 right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: [UIView],
                 right: SteviaFlexibleMargin) -> PartialFlexibleConstraint {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: PartialFlexibleConstraint, right: UIView) -> [UIView] {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: SteviaLeftFlexibleMargin, right: UIView) -> UIView {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: UIView, right: SteviaRightFlexibleMargin) -> UIView {
-    return left-right
+    return left - right
 }
 
 @discardableResult
 public func -- (left: [UIView], right: SteviaRightFlexibleMargin) -> [UIView] {
-    return left-right
+    return left - right
 }

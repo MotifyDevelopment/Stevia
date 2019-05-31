@@ -9,26 +9,25 @@
 import UIKit
 
 public extension UIButton {
-    
     /**
      Sets the title of the button for normal State
-     
+
      Essentially a shortcut for `setTitle("MyText", forState: .Normal)`
-     
+
      - Returns: Itself for chaining purposes
-    */
+     */
     @discardableResult
     func text(_ t: String) -> Self {
         setTitle(t, for: .normal)
         return self
     }
-    
+
     /**
      Sets the localized key for the button's title in normal State
-     
+
      Essentially a shortcut for `setTitle(NSLocalizedString("MyText", comment: "")
      , forState: .Normal)`
-     
+
      - Returns: Itself for chaining purposes
      */
     @discardableResult
@@ -36,12 +35,12 @@ public extension UIButton {
         text(NSLocalizedString(t, comment: ""))
         return self
     }
-    
+
     /**
      Sets the image of the button in normal State
-     
+
      Essentially a shortcut for `setImage(UIImage(named:"X"), forState: .Normal)`
-     
+
      - Returns: Itself for chaining purposes
      */
     @discardableResult
@@ -73,7 +72,7 @@ public extension UILabel {
         text = t
         return self
     }
-    
+
     /**
      Sets the label localization key but in a chainable fashion
      Essentially a shortcut for `text = NSLocalizedString("X", comment: "")`
@@ -89,9 +88,9 @@ public extension UILabel {
 extension UIImageView {
     /**
      Sets the image of the imageView but in a chainable fashion
-     
+
      Essentially a shortcut for `image = UIImage(named: "X")`
-     
+
      - Returns: Itself for chaining purposes
      */
     @discardableResult
